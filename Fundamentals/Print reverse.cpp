@@ -14,24 +14,15 @@ You've to calculate the reverse in a number, not just print the reverse.*/
 //code:
 
 #include<iostream>
-#include<cmath>
 using namespace std;
 int main() {
-	int a,b,c;
-	cin>>a>>b>>c;
-	int d=((b*b)-(4*a*c));
-	int r1=((-b+ sqrt(d))/(2*a));
-	int r2=((-b-sqrt(d))/(2*a));
-	if((a!=0)&&d>0){
-		cout<<"Real and Distinct"<<endl;
-		cout<<r2<<" "<<r1;
+	long long n,rem=0,reverse=0;
+	cin>>n;
+	while(n>0){
+		rem=n%10;
+		reverse=reverse*10+rem;
+		n=n/10;
 	}
-	else if((a!=0)&&d==0){
-		cout<<"Real and Equal "<<endl;
-		cout<<r2<<" "<<r1;
-	}
-	else{
-		cout<<"Imaginary"<<endl;
-	}
-		return 0;
+	cout<<reverse;
+	return 0;
 }
